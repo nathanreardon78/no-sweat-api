@@ -6,3 +6,10 @@ venv/lib/*
 do.txt
 db.sqlite3
 .vscode/*
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
