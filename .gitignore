@@ -1,0 +1,8 @@
+venv/*
+venv/bin/*
+venv/include/*
+venv/lib/*
+.env
+do.txt
+db.sqlite3
+.vscode/*
