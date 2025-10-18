@@ -13,3 +13,7 @@ __pycache__/
 *.pyd
 *.sqlite3
 *.log
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

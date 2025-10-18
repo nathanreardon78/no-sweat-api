@@ -22,6 +22,7 @@ class WholesaleInquiryView(APIView):
                 "email": email,
                 "company": company,
                 "expected_units": expected_units,
+                "message": message,
                 "year": datetime.now().year,
             },
         )
