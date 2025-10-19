@@ -28,6 +28,11 @@ DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config("ALLOWED_HOSTS", default=[], cast=lambda v: [s.strip() for s in v.split(",") if s])
 
+CORS_ALLOWED_ORIGINS = [
+    "https://nosweatsealer.com",
+    "https://www.nosweatsealer.com",
+]
+
 
 # Application definition
 
