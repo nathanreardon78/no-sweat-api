@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Sweat™ Order Confirmation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7fafc;
+        color: #111;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #ffffff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+      .header {
+        background: #00aeef;
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .content {
+        padding: 30px 25px;
+      }
+      .content p {
+        font-size: 16px;
+        line-height: 1.6;
+      }
+      .order-summary {
+        margin: 20px 0;
+        background: #f4f7f8;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      .order-summary table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .order-summary th,
+      .order-summary td {
+        padding: 8px;
+        text-align: left;
+      }
+      .order-summary th {
+        background-color: #e8f4f8;
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        color: #666;
+        padding: 25px;
+        background: #f9f9f9;
+      }
+      .footer a {
+        color: #00aeef;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>No Sweat™</h1>
+        <p>Order Confirmation</p>
+      </div>
+      <div class="content">
+        <p>Hi {{customer_name}},</p>
+        <p>
+          Thank you for your purchase! We're thrilled to confirm your order.
+        </p>
+
+        <div class="order-summary">
+          <h3>Order Summary</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Size</th>
+                <th>Qty</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in items %}
+              <tr>
+                <td>{{ item.name }}</td>
+                <td>{{ item.size }}</td>
+                <td>{{ item.quantity }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <p><strong>Total Paid:</strong> ${{ total_amount }}</p>
+        <p>
+          We’ll notify you once your order ships. If you have questions, feel
+          free to reply to this email.
+        </p>
+        <p>Cheers,<br />The No Sweat™ Team</p>
+      </div>
+
+      <div class="footer">
+        <p>&copy; {{ current_year }} No Sweat™. All rights reserved.</p>
+        <p><a href="https://nosweatsealer.com">Visit our website</a></p>
+      </div>
+    </div>
+  </body>
+</html>
